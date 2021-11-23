@@ -83,9 +83,9 @@ if hit == ("Hit"):
 	payload={}
 	headers = {}
 	response = requests.request("GET", url, headers=headers, data=payload)
-	print(response.text))
+	print(response.text)
 else:
-    print("Sorry. Type HIT.")
+    print("Sorry. Type Hit.")
     hit = input("To draw your first 2 cards enter Hit: ")
     
     
