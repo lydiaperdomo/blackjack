@@ -5,7 +5,7 @@ print ("This is Lydia's BlackJack Game")
 #######need instructions                 DONE
 instructions = input("Do you need instructions? Yes or No: ")
 if instructions == ("Yes"):
-	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! 2 through 10 count at face value, face cards coust as 10, and Aces can be 1 or 11. \n Get an Ace and 10 points and you've got BlackJack! Need another card, ask to Hit. If not say,Stay. Good luck!")
+	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! \n 2 through 10 count at face value, face cards coust as 10, and Aces can be 1 or 11. \n Get an Ace and 10 points and you've got BlackJack! \n Need another card, ask to Hit. If not say,Stay. Good luck!")
 elif instructions == ("No"):
 	print ("Let's get started")
 else:
