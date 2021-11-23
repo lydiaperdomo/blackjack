@@ -8,9 +8,9 @@ instructions = input("Do you need instructions? Enter Yes or No: ")
 if instructions == ("Yes"):
 	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! \n 2 through 10 count at face value, face cards count as 10, and Aces is 11. \n Get an Ace and 10 points and you've got BlackJack! \n Need another card, ask to Hit. If not say,Stay. Good luck!")
 elif instructions == ("No"):
-	print ("Let's get started")
+	print ("\n Let's get started")
 else:
-    print("Sorry. Either Yes or No. Try again.")
+    print("\n Sorry. Either Yes or No. Try again.")
 
 
 ########imports
@@ -32,8 +32,14 @@ numdeck = input("\n How many decks would you like to play with? Pick numbers 2 t
 
 
 
-if numdeck == ("2"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=2"
+if numdeck == ("1"):
+	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
+	payload={}
+	headers = {}
+	response1 = requests.request("GET", url, headers=headers, data=payload)
+	print(response1.text)
+elif numdeck == ("2"):
+	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=3"
 	payload={}
 	headers = {}
 	response2 = requests.request("GET", url, headers=headers, data=payload)
