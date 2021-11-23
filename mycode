@@ -79,7 +79,7 @@ else:
 
 hit = input("To draw your first 2 cards enter Hit: ")
 if hit == ("Hit"):
-	url = "https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=2"
+	url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
 	payload={}
 	headers = {}
 	response = requests.request("GET", url, headers=headers, data=payload)
