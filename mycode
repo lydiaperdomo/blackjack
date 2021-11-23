@@ -1,5 +1,6 @@
 #####greeting
 
+print ("This is Lydia's BlackJack Game")
 
 #######need instructions                 DONE
 instructions = input("Do you need instructions? Yes or No: ")
