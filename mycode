@@ -105,15 +105,24 @@ else:
     
  ############draw more cards   
   
-import requests
 
-url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
 
-payload={}
-headers = {}
+hit2 = input("\n To get more cards type Hit. "
+if hit2 == ("Hit"): 
+	url = "https://deckofcardsapi.com/api/deck/new/draw/?count=1"
+	payload={}
+	headers = {}
+	morecards = requests.request("GET", url, headers=headers, data=payload)
+	print(morecards.text)
+else:
+	print("You chose to stay.")
 
-response = requests.request("GET", url, headers=headers, data=payload)
 
-print(response.text)
 
-    
+
+
+
+
+
+
+
