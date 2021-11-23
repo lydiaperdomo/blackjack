@@ -1,0 +1,119 @@
+#####greeting
+
+
+#######need instructions                 DONE
+instructions = input("Do you need instructions? Yes or No: ")
+if instructions == ("Yes"):
+	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! 2 through 10 count at face value, face cards coust as 10, and Aces can be 1 or 11. \n Get an Ace and 10 points and you've got BlackJack! Need another card, ask to Hit. If not say,Stay. Good luck!")
+elif instructions == ("No"):
+	print ("Let's get started")
+else:
+    print("Sorry. Either Yes or No. Try again.")
+
+
+
+
+
+########imports
+import os
+import random
+import requests
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####pick number of decks                    DONE
+
+numdeck = input("How many decks would you like to play with? Pick numbers 2 thru 6. ")
+
+
+if numdeck == ("2"):
+
+    url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=2"
+
+payload={}
+headers = {}
+
+response2 = requests.request("GET", url, headers=headers, data=payload)
+
+print(response2.text)
+
+
+elif numdeck == ("3"):
+
+    url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=3"
+
+payload={}
+headers = {}
+
+response3 = requests.request("GET", url, headers=headers, data=payload)
+
+print(response3.text)
+
+
+elif numdeck == ("4"):
+
+    url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=4"
+
+payload={}
+headers = {}
+
+response4 = requests.request("GET", url, headers=headers, data=payload)
+
+print(response4.text)
+
+
+elif numdeck == ("5"):
+
+    url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=5"
+
+payload={}
+headers = {}
+
+response5 = requests.request("GET", url, headers=headers, data=payload)
+
+print(response5.text)
+
+
+else numdeck == ("6"):
+
+    url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6"
+
+payload={}
+headers = {}
+
+response6 = requests.request("GET", url, headers=headers, data=payload)
+
+print(response6.text)
+
+
+
+
+
+
+
+
+
+
+##############
+suits = ("Hearts", "Diamonds", "Spades", "Clubs")
+ranks = ("two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "Jack", "Queen", "King", "Ace")
+values = ("two":2, "three":3, "four":4, "five":5, "six":6, "seven":7, "eight":8, "nine":9, "ten":10, "Jack""10", "Queen":10, "King":10, "Ace":11)
+
+
+Class Card:
+	def __init__(self, suit, rank):
+		self.suit = suit
+		self.rank = rank
+		
+	def __str__(self):
+		return self.rank + " of " + self.suit
