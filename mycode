@@ -26,53 +26,26 @@ import urllib
 
 
 
-
-numdeck = input("\n How many decks would you like to play with? Pick numbers 2 thru 6. ")
-
+numDeck = input("\n How many decks would you like to play with? Pick numbers 1 thru 6. ")
 
 
 
-if numdeck == ("1"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
-	payload={}
-	headers = {}
-	response1 = requests.request("GET", url, headers=headers, data=payload)
-	print(response1.text)
-elif numdeck == ("2"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=3"
-	payload={}
-	headers = {}
-	response2 = requests.request("GET", url, headers=headers, data=payload)
-	print(response2.text)
-elif numdeck == ("3"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=3"
-	payload={}
-	headers = {}
-	response3 = requests.request("GET", url, headers=headers, data=payload)
-	print(response3.text)
-elif numdeck == ("4"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=4"
-	payload={}
-	headers = {}
-	response4 = requests.request("GET", url, headers=headers, data=payload)
-	print(response4.text)
-elif numdeck == ("5"):
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=5"
-	payload={}
-	headers = {}
-	response5 = requests.request("GET", url, headers=headers, data=payload)
-	print(response5.text)
-else:
-	url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6"
-	payload={}
-	headers = {}
-	response6 = requests.request("GET", url, headers=headers, data=payload)
-	print(response6.text)
+urlnumDeck = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=" + str(numDeck)
+
+payloadnumDeck={}
+headersnumDeck = {
+  'Accept': 'application/json'
+}
+
+newDeck = requests.request("GET", urlnumDeck, headers=headersnumDeck, data=payloadnumDeck)
+
+deckJ = newDeck.json()
+deck = deckJ['deck_id']
+
+print("Your deck id is: " + str(deck) + " and contains " + str(numDeck) + " decks.")
 
 
 
-
-\n
 
 
 
