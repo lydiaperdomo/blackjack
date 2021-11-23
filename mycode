@@ -66,6 +66,18 @@ else:
 	
 	
 	
+import requests
+
+url = "https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=2"
+
+payload={}
+headers = {
+  'Accept': 'application/json'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
 
 
 
