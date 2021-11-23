@@ -1,46 +1,33 @@
-print ("This is Lydia's BlackJack Game")
 
-#######need instructions                 DONE
-instructions = input("Do you need instructions? Enter Yes or No: ")
-if instructions == ("Yes"):
-	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! \n 2 through 10 count at face value, face cards count as 10, and Aces is 11. \n Get an Ace and 10 points and you've got BlackJack! \n Need another card, ask to Hit. If not say, Stay. Good luck!")
-elif instructions == ("No"):
-	print ("\n Let's get started")
-else:
-    print("\n Sorry. Either Yes or No. Try again.")
-
-
-########imports
-import os
-import random
-import requests
-import json
-import urllib
-
-
-#####pick number of decks                    DONE
-
-
-
-
-
-numDeck = input("\n How many decks would you like to play with? Pick numbers 1 thru 6. ")
-
-
-
-urlnumDeck = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=" +str(numDeck)
-
-payloadnumDeck={}
-headersnumDeck = {
-  'Accept': 'application/json'
-}
-
-newDeck = requests.request("GET", url, headers=headersnumDeck, data=payloadnumDeck)
-
-deckJ = newDeckShuffle.json()
-deck = deckJ['deck_id']
-
-print("Your deck id is: "str(deck) + "and contains " str(numDeck) + " decks.")
 
 
 	
+
+
+
+
+hit = input("To draw your first 2 cards type 2: ")
+if hit == ("2"):
+	url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
+	payload={}
+	headers = {}
+	firstcards = requests.request("GET", url, headers=headers, data=payload)
+	print(firstcards.text)
+
+
+
+url = "https://deckofcardsapi.com/api/deck/" + str(deck) "/draw/?count=2"
+payload={}
+headers = {
+  'Accept': 'application/json'
+}
+
+FC = requests.request("GET", url, headers=headers, data=payload)
+cards1 = FC.json()
+FCvalue = card1v["value"]
+FCsuit = cards1s["suit"]
+
+print("Your cards are " + str(FCvalue) + " and contains " + str(FCsuit) + " decks.")
+
+
+
