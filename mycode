@@ -21,6 +21,7 @@ import json
 import urllib
 
 
+
 #####pick number of decks                    DONE
 
 
@@ -44,40 +45,26 @@ print("Your deck id is: " + str(deck) + " and contains " + str(numDeck) + " deck
 
 #######get first 2 cards
 
-hit = input("To draw your first 2 cards type Hit: ")
-if hit == ("Hit"):
-	url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
-	payload={}
-	headers = {}
-	firstcards = requests.request("GET", url, headers=headers, data=payload)
+text = input("Press Enter to get your first 2 cards")
+if text == (""):
+	urltext = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
+	payloadtext={}
+	headerstext = {}
+	firstcards = requests.request("GET", urltext, headers=headerstext, data=payloadtext)
 	print(firstcards.text)
 else:
-	print("Sorry. Type Hit.")
-	hit = input("To draw your first 2 cards enter Hit: ")
-	url = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
-	payload={}
-	headers = {}
-	firstcards = requests.request("GET", url, headers=headers, data=payload)
-	print(firstcards.text)
-	
-	
-	
-	
-	
-	
-	
-import requests
-
-url = "https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=2"
-
-payload={}
-headers = {
-  'Accept': 'application/json'
-}
-
-response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text)
-
-
-
+    print("Please press enter")
+ 
+hit = input("To draw another card type Hit or Stay if you're  done:")
+if hit == ("Hit"):
+	urlhit = "https://deckofcardsapi.com/api/deck/new/draw/?count=1"
+	payloadhit={}
+	headershit = {}
+	more = requests.request("GET", urlhit, headers=headershit, data=payloadhit)
+	print(more.text)
+else:
+    print("You choose to stay.")
+    
+print("Your cards are")
+ 
+ 
