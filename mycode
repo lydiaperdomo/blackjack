@@ -69,3 +69,14 @@ if hit == ("S"):
 print("Your cards are")
 
 
+urlPH = "https://deckofcardsapi.com/api/deck/new/pile/playerhands/add/?cards=" + str(more) + str(firstcards)
+
+payloadPH={}
+headersPH = {
+  'Accept': 'application/json'
+}
+
+playerhand = requests.request("GET", urlPH, headers=headersPH, data=payloadPH)
+
+print(playerhand.text)
+
