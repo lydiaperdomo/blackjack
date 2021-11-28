@@ -6,11 +6,11 @@ print ("This is Lydia's BlackJack Game")
 #######need instructions                 DONE
 instructions = input("Do you need instructions? Yes or No: ")
 if instructions == ("Yes"):
-	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! \n 2 through 10 count at face value, face cards coust as 10, and Aces can be 1 or 11. \n Get an Ace and 10 points and you've got BlackJack! \n Need another card, ask to Hit. If not say,Stay. Good luck!")
+	print ("\n Its dealer vs you. \n Whoever has the highigst score without going over 21 wins.\n Go over 21 and BUST! \n 2 through 10 count at face value, face cards count as 10, and Aces can be 1 or 11. \n Get an Ace and 10 points and you've got BlackJack! \n Need another card, ask to Hit. If not say, Stay. Good luck!")
 elif instructions == ("No"):
-	print ("Let's get started")
+	print ("\n Let's get started")
 else:
-    print("Sorry. Either Yes or No. Try again.")
+    print("\n Sorry. Either Yes or No. Try again.")
 
 
 ########imports
@@ -39,13 +39,13 @@ newDeck = requests.request("GET", urlnumDeck, headers=headersnumDeck, data=paylo
 deckJ = newDeck.json()
 deck = deckJ['deck_id']
 
-print("Your deck id is: " + str(deck) + " and contains " + str(numDeck) + " decks.")
+print("\n Your deck id is: " + str(deck) + " and contains " + str(numDeck) + " decks.")
 
 
 
 #######get first 2 cards
 
-text = input("Press Enter to get your first 2 cards")
+text = input("\n Press Enter to get your first 2 cards")
 if text == (""):
 	urltext = "https://deckofcardsapi.com/api/deck/new/draw/?count=2"
 	payloadtext={}
@@ -53,18 +53,18 @@ if text == (""):
 	firstcards = requests.request("GET", urltext, headers=headerstext, data=payloadtext)
 	print(firstcards.text)
 else:
-    print("Please press enter")
+    print("\n Please press enter")
  
 
-hit = input("To draw another card type H or S if you're  done:")
+hit = input("\n To draw another card type H or S if you're  done:")
 while hit == ("H"):
 	urlhit = "https://deckofcardsapi.com/api/deck/new/draw/?count=1"
 	payloadhit={}
 	headershit = {}
 	more = requests.request("GET", urlhit, headers=headershit, data=payloadhit)
-	print(more.text)
+	print(\n more.text)
 if hit == ("S"):
-    print("You choose to stay.")
+    print("\n You choose to stay.")
     
 print("Your cards are")
 
