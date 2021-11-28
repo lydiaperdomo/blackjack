@@ -68,3 +68,26 @@ else:
 print("Your cards are")
  
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hit = input("To draw another card type H or S if you're  done:")
+while hit == ("H"):
+	urlhit = "https://deckofcardsapi.com/api/deck/new/draw/?count=1"
+	payloadhit={}
+	headershit = {}
+	more = requests.request("GET", urlhit, headers=headershit, data=payloadhit)
+	print(more.text)
+if hit == ("S"):
+    print("You choose to stay.")
